@@ -1,0 +1,16 @@
+vm_name = ENV.fetch("VM_NAME")
+vm_ip   = ENV.fetch("VM_IP")
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+
+  config.vm.define vm_name do |vm|
+    vm.vm.hostname = vm_name
+    vm.vm.network "private_network", ip: vm_ip
+
+    vm.vm.provider "virtualbox" do |vb|
+      vb.memory = 1024
+      vb.cpus  = 1
+    end
+  end
+end
