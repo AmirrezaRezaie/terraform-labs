@@ -1,0 +1,15 @@
+# Terraform
+**/.terraform/*
+**/*.tfstate
+**/*.tfstate.*
+*.tfstate.backup
+
+# Vagrant
+**/.vagrant/
+
+# OS files
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
